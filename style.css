@@ -155,7 +155,7 @@ footer {
   color: #000;
 }
 
-/* Two-column layout for sections */
+/* Two-column layout */
 .two-column {
   display: flex;
   justify-content: center;
