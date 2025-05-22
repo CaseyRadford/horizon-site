@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  background: black;
-  color: white;
+  background: #000;
+  color: #fff;
   font-family: 'Syne', sans-serif;
+  overflow-x: hidden;
 }
+
 header {
   position: fixed;
   top: 0;
@@ -18,50 +23,96 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid #222;
 }
+
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff;
 }
+
 nav a {
   color: white;
   text-decoration: none;
   margin-left: 30px;
   font-size: 1rem;
+  transition: color 0.3s ease;
 }
+
+nav a:hover {
+  color: #0ff;
+}
+
 .hero {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+  background: url('assets/hero.jpg') center/cover no-repeat;
   text-align: center;
   padding: 0 20px;
+  animation: fadeIn 2s ease forwards;
 }
+
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   line-height: 1.2;
+  text-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out 0.5s forwards;
 }
+
 .section {
   padding: 100px 40px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .section h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
+
 .section p {
   font-size: 1.1rem;
   max-width: 800px;
   margin: 0 auto;
 }
+
 footer {
   padding: 40px;
   text-align: center;
   background: #111;
   font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
