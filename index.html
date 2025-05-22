@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
     <div class="logo">Horizon</div>
     <nav>
@@ -16,32 +17,46 @@
       <a href="#">Contact</a>
     </nav>
   </header>
+
   <section class="hero">
     <h1>We build brands<br>that stand apart</h1>
   </section>
+
+  <section class="section">
+    <h2>Our Models</h2>
+    <div class="carousel">
+      <img src="assets/model1.jpg" alt="Model 1">
+      <img src="assets/model2.jpg" alt="Model 2">
+      <img src="assets/model3.jpg" alt="Model 3">
+    </div>
+  </section>
+
   <section class="section">
     <h2>Creative Strategy</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis sapien id lorem posuere, at tempus elit malesuada.</p>
   </section>
+
   <section class="section">
     <h2>Content Production</h2>
     <p>Integer sit amet magna a tellus egestas sollicitudin. Suspendisse finibus, libero non dignissim gravida, elit mi cursus libero.</p>
   </section>
+
   <footer>
     &copy; 2025 Horizon Entertainment. All rights reserved.
   </footer>
-  <script>
-  const sections = document.querySelectorAll('.section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.2 });
 
-  sections.forEach(section => observer.observe(section));
-</script>
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
 
 </body>
 </html>
