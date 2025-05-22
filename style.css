@@ -116,6 +116,7 @@ footer {
     opacity: 1;
   }
 }
+
 .cta {
   background: linear-gradient(to right, #0f0f0f, #111111);
   padding: 100px 20px;
@@ -152,4 +153,49 @@ footer {
 .cta-button:hover {
   background: white;
   color: #000;
+}
+
+/* -------------------- */
+/* ✅ Responsive Styles */
+/* -------------------- */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    margin-left: 15px;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .carousel img {
+    height: 300px;
+  }
+
+  .cta h2 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .two-column {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .two-column div {
+    flex: 1 1 100%;
+  }
 }
