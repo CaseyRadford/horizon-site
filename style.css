@@ -155,6 +155,37 @@ footer {
   color: #000;
 }
 
+/* Two-column layout for sections */
+.two-column {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.two-column div {
+  flex: 1 1 50%;
+}
+
+.two-column img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,255,255,0.2);
+}
+
+.two-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.two-column li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
 /* -------------------- */
 /* ✅ Responsive Styles */
 /* -------------------- */
