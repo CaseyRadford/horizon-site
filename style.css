@@ -49,10 +49,11 @@ nav a:hover {
   color: #0ff;
 }
 
-/* 🔥 HERO SECTION WITH VIDEO 🔥 */
+/* 🔥 Fullscreen Video Hero */
 .hero {
   position: relative;
   height: 100vh;
+  width: 100%;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -240,4 +241,123 @@ footer {
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
   transition: background 0.3s ease;
-  z-inde
+  z-index: 2;
+}
+
+.service-card:hover::before {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.service-card .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #0ff;
+  z-index: 3;
+  text-align: center;
+  padding: 10px;
+}
+
+.service-card.marketing::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/marketing-digital.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.service-card.marketing:hover::after {
+  opacity: 1;
+}
+
+.service-card.marketing .overlay {
+  position: relative;
+  z-index: 3;
+}
+
+.service-card.production::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/production-video.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.service-card.production:hover::after {
+  opacity: 1;
+}
+
+.service-card.production .overlay {
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    margin-left: 15px;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .carousel img {
+    height: 300px;
+  }
+
+  .cta h2 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .two-column {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .two-column div {
+    flex: 1 1 100%;
+  }
+
+  .service-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 90%;
+    height: 350px;
+  }
+}
