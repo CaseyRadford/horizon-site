@@ -19,30 +19,13 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
   padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
   background: transparent;
   border-bottom: none;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-left a,
-.nav-right a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.nav-left a:hover,
-.nav-right a:hover {
-  color: #0ff;
 }
 
 .logo {
@@ -57,7 +40,24 @@ header {
   transform: translateX(-50%);
 }
 
-/* Hero */
+.nav-right {
+  position: absolute;
+  right: 40px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+  color: #0ff;
+}
+
+/* Hero Section */
 .hero {
   position: relative;
   height: 100vh;
@@ -127,7 +127,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Animation */
+/* Animations */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -139,7 +139,7 @@ footer {
   }
 }
 
-/* CTA */
+/* CTA Section */
 .cta {
   background: linear-gradient(to right, #0f0f0f, #111111);
   padding: 100px 20px;
@@ -178,7 +178,7 @@ footer {
   color: #000;
 }
 
-/* Two-Column Section */
+/* Two-Column Layout */
 .two-column {
   display: flex;
   justify-content: center;
@@ -212,4 +212,158 @@ footer {
   color: #ccc;
 }
 
-/* S*
+/* Services Section */
+.services {
+  padding: 100px 40px;
+  text-align: center;
+  background: #000;
+}
+
+.services h2 {
+  font-size: 2.8rem;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.service-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.service-card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: #111;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #222;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+.service-card:hover::before {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.service-card .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #0ff;
+  z-index: 3;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Marketing Hover Image */
+.service-card.marketing::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/marketing-digital.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.service-card.marketing:hover::after {
+  opacity: 1;
+}
+
+/* Video Production Hover Image */
+.service-card.production::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/production-video.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.service-card.production:hover::after {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .carousel img {
+    height: 300px;
+  }
+
+  .cta h2 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .two-column {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .two-column div {
+    flex: 1 1 100%;
+  }
+
+  .service-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 90%;
+    height: 350px;
+  }
+
+  .nav-right {
+    display: none;
+  }
+}
