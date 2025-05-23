@@ -1,102 +1,356 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horizon | Inspired by Incognito</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap');
 
-  <header>
-    <div class="logo">Horizon</div>
-    <nav>
-      <a href="#">Work</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <section class="hero">
-    <h1>We build brands<br>that stand apart</h1>
-  </section>
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  overflow-x: hidden;
+}
 
-  <section class="section">
-    <h2>Our Models</h2>
-    <div class="carousel">
-      <img src="assets/model1.jpg" alt="Model 1">
-      <img src="assets/model2.jpg" alt="Model 2">
-      <img src="assets/model3.jpg" alt="Model 3">
-    </div>
-  </section>
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #222;
+}
 
-  <section class="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-      <div class="service-card" style="background-image: url('assets/event.jpg');">
-        <div class="overlay">Event Production</div>
-      </div>
-      <div class="service-card marketing">
-        <div class="overlay">Marketing</div>
-      </div>
-      <div class="service-card production">
-        <div class="overlay">Video Production</div>
-      </div>
-    </div>
-  </section>
+.logo {
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff;
+}
 
-  <section class="section two-column">
-    <div>
-      <h2>Creative Strategy</h2>
-      <ul>
-        <li>Brand identity & market fit</li>
-        <li>Voice, tone, & digital persona</li>
-        <li>Content playbooks for platforms</li>
-      </ul>
-    </div>
-    <div>
-      <img src="assets/strategy.jpg" alt="Creative Strategy Image">
-    </div>
-  </section>
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
 
-  <section class="section two-column">
-    <div>
-      <h2>Content Production</h2>
-      <ul>
-        <li>Full-scale photo and video shoots</li>
-        <li>Location, wardrobe, and team coordination</li>
-        <li>Platform-optimized media delivery</li>
-      </ul>
-    </div>
-    <div>
-      <img src="assets/production.jpg" alt="Content Production Image">
-    </div>
-  </section>
+nav a:hover {
+  color: #0ff;
+}
 
-  <section class="section cta">
-    <h2>Ready to Join Horizon?</h2>
-    <p>We're always looking for the next face. Apply now and let’s build something iconic together.</p>
-    <a href="#" class="cta-button">Apply Now</a>
-  </section>
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('assets/hero.jpg') center/cover no-repeat;
+  text-align: center;
+  padding: 0 20px;
+  animation: fadeIn 2s ease forwards;
+}
 
-  <footer>
-    &copy; 2025 Horizon Entertainment. All rights reserved.
-  </footer>
+.hero h1 {
+  font-size: 3.8rem;
+  line-height: 1.2;
+  text-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out 0.5s forwards;
+}
 
-  <script>
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
+.section {
+  padding: 100px 40px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
 
-    sections.forEach(section => observer.observe(section));
-  </script>
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-</body>
-</html>
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+footer {
+  padding: 40px;
+  text-align: center;
+  background: #111;
+  font-size: 0.9rem;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.cta {
+  background: linear-gradient(to right, #0f0f0f, #111111);
+  padding: 100px 20px;
+  text-align: center;
+  border-top: 1px solid #222;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.cta p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #ccc;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  background: #0ff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: white;
+  color: #000;
+}
+
+/* Two-column layout */
+.two-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 80px 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.two-column div {
+  flex: 1 1 500px;
+}
+
+.two-column img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,255,255,0.2);
+}
+
+.two-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.two-column li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* Services */
+.services {
+  padding: 100px 40px;
+  text-align: center;
+  background: #000;
+}
+
+.services h2 {
+  font-size: 2.8rem;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.service-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.service-card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: #111;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #222;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+.service-card:hover::before {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.service-card .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #0ff;
+  z-index: 3;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Hover image for Marketing */
+.service-card.marketing::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/marketing-digital.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.service-card.marketing:hover::after {
+  opacity: 1;
+}
+
+.service-card.marketing .overlay {
+  position: relative;
+  z-index: 3;
+}
+
+/* Hover image for Video Production */
+.service-card.production::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/production-video.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.service-card.production:hover::after {
+  opacity: 1;
+}
+
+.service-card.production .overlay {
+  position: relative;
+  z-index: 3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    margin-left: 15px;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .carousel img {
+    height: 300px;
+  }
+
+  .cta h2 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .two-column {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .two-column div {
+    flex: 1 1 100%;
+  }
+
+  .service-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 90%;
+    height: 350px;
+  }
+}
 
