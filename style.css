@@ -49,7 +49,6 @@ nav a:hover {
   color: #0ff;
 }
 
-/* 🔥 Fullscreen Video Hero */
 .hero {
   position: relative;
   height: 100vh;
@@ -268,6 +267,7 @@ footer {
   padding: 10px;
 }
 
+/* Marketing hover image */
 .service-card.marketing::after {
   content: '';
   position: absolute;
@@ -289,6 +289,7 @@ footer {
   z-index: 3;
 }
 
+/* Video Production hover image */
 .service-card.production::after {
   content: '';
   position: absolute;
