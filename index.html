@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <header>
+  <header class="sticky-header">
     <div class="logo">Horizon</div>
     <nav class="nav-right">
       <a href="#">Home</a>
@@ -101,6 +101,16 @@
     }, { threshold: 0.2 });
 
     sections.forEach(section => observer.observe(section));
+
+    // Sticky scroll background
+    const header = document.querySelector('.sticky-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
   </script>
 
 </body>
