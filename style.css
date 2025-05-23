@@ -189,7 +189,7 @@ footer {
   color: #ccc;
 }
 
-/* Services grid section */
+/* Services section */
 .services {
   padding: 100px 40px;
   text-align: center;
@@ -231,7 +231,7 @@ footer {
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
   transition: background 0.3s ease;
-  z-index: 1;
+  z-index: 2;
 }
 
 .service-card:hover::before {
@@ -253,12 +253,12 @@ footer {
   font-weight: bold;
   text-transform: uppercase;
   text-shadow: 0 0 5px #0ff;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
   padding: 10px;
 }
 
-/* 🔁 Hover image for marketing card */
+/* Marketing hover image */
 .service-card.marketing::after {
   content: '';
   position: absolute;
@@ -268,7 +268,7 @@ footer {
   background-position: center;
   opacity: 0;
   transition: opacity 0.5s ease;
-  z-index: 0;
+  z-index: 1;
 }
 
 .service-card.marketing:hover::after {
@@ -277,10 +277,32 @@ footer {
 
 .service-card.marketing .overlay {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
-/* Responsive Styles */
+/* Video Production hover image */
+.service-card.production::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/production-video.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.service-card.production:hover::after {
+  opacity: 1;
+}
+
+.service-card.production .overlay {
+  position: relative;
+  z-index: 3;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.2rem;
