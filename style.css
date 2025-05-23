@@ -222,6 +222,7 @@ footer {
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
 }
 
 .service-card::before {
@@ -230,6 +231,7 @@ footer {
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
   transition: background 0.3s ease;
+  z-index: 1;
 }
 
 .service-card:hover::before {
@@ -251,15 +253,34 @@ footer {
   font-weight: bold;
   text-transform: uppercase;
   text-shadow: 0 0 5px #0ff;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   padding: 10px;
 }
 
-/* -------------------- */
-/* ✅ Responsive Styles */
-/* -------------------- */
+/* 🔁 Hover image for marketing card */
+.service-card.marketing::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/marketing-digital.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
 
+.service-card.marketing:hover::after {
+  opacity: 1;
+}
+
+.service-card.marketing .overlay {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.2rem;
