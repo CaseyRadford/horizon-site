@@ -583,6 +583,7 @@ footer {
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  clip-path: ellipse(70% 45% at 50% 50%);
 }
 
 .showcase-overlay {
@@ -601,62 +602,11 @@ footer {
   z-index: 2;
 }
 
-/* Add floating shapes */
-.showcase-item .shape {
-  position: absolute;
-  z-index: 1;
-  opacity: 0.1;
-  transition: transform 0.5s ease, opacity 0.3s ease;
-}
-
-.showcase-item .shape-1 {
-  width: 100px;
-  height: 100px;
-  border: 2px solid #0ff;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  top: 20%;
-  left: 10%;
-  transform: rotate(45deg);
-}
-
-.showcase-item .shape-2 {
-  width: 60px;
-  height: 60px;
-  border: 2px solid #FF1493;
-  border-radius: 50%;
-  bottom: 30%;
-  right: 15%;
-}
-
-.showcase-item .shape-3 {
-  width: 80px;
-  height: 80px;
-  border: 2px solid #0ff;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  top: 40%;
-  right: 20%;
-  transform: rotate(15deg);
-}
-
-.showcase-item:hover .shape {
-  opacity: 0.2;
-  transform: scale(1.1) rotate(15deg);
-}
-
-.showcase-item:hover .shape-1 {
-  transform: rotate(90deg) scale(1.1);
-}
-
-.showcase-item:hover .shape-2 {
-  transform: scale(1.2);
-}
-
-.showcase-item:hover .shape-3 {
-  transform: rotate(45deg) scale(1.1);
-}
-
-.showcase-item:hover .showcase-image img {
-  transform: scale(1.1);
+/* Remove floating shapes */
+.showcase-item .shape,
+.showcase-item::before,
+.showcase-item::after {
+  display: none !important;
 }
 
 .showcase-category {
