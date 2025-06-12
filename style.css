@@ -540,6 +540,7 @@ footer {
   overflow: hidden;
   border-radius: 12px;
   cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .showcase-item.tall {
@@ -573,22 +574,24 @@ footer {
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.8) 0%,
     rgba(0, 0, 0, 0.4) 50%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 0.2) 100%
   );
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.4s ease;
 }
 
 .showcase-item:hover .showcase-overlay {
-  opacity: 1;
-  transform: translateY(0);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
 }
 
 .showcase-category {
@@ -600,14 +603,13 @@ footer {
   border-radius: 4px;
   margin-bottom: 15px;
   font-weight: 500;
-  transform: translateY(20px);
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.4s ease;
 }
 
 .showcase-item:hover .showcase-category {
-  transform: translateY(0);
-  opacity: 1;
+  transform: translateY(-5px);
 }
 
 .showcase-overlay h3 {
@@ -615,28 +617,26 @@ footer {
   font-size: 1.8rem;
   margin-bottom: 10px;
   line-height: 1.2;
-  transform: translateY(20px);
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.4s ease;
 }
 
 .showcase-item:hover .showcase-overlay h3 {
-  transform: translateY(0);
-  opacity: 1;
+  transform: translateY(-5px);
 }
 
 .showcase-overlay p {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1rem;
   line-height: 1.4;
-  transform: translateY(20px);
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.4s ease;
 }
 
 .showcase-item:hover .showcase-overlay p {
-  transform: translateY(0);
-  opacity: 1;
+  transform: translateY(-5px);
 }
 
 @media (max-width: 1200px) {
