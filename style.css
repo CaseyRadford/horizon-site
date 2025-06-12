@@ -562,8 +562,20 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Specific positioning for each item - using percentage values for fine control */
+.showcase-item:nth-child(1) .showcase-image-wrapper img {
+  object-position: 50% 30%; /* center center */
+}
+
+.showcase-item:nth-child(2) .showcase-image-wrapper img {
+  object-position: 50% 0%; /* top center */
+}
+
+.showcase-item:nth-child(3) .showcase-image-wrapper img {
+  object-position: 50% 0%; /* top center */
 }
 
 .showcase-item:hover .showcase-image-wrapper img {
