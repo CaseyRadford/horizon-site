@@ -567,15 +567,15 @@ footer {
 
 /* Specific positioning for each item - using percentage values for fine control */
 .showcase-item:nth-child(1) .showcase-image-wrapper img {
-  object-position: 50% 0%; /* center center */
+  object-position: 50% 30% !important; /* center, 30% from top */
 }
 
 .showcase-item:nth-child(2) .showcase-image-wrapper img {
-  object-position: 50% 50%; /* top center */
+  object-position: 50% 0% !important; /* top center */
 }
 
 .showcase-item:nth-child(3) .showcase-image-wrapper img {
-  object-position: 50% 0%; /* top center */
+  object-position: 50% 0% !important; /* top center */
 }
 
 .showcase-item:hover .showcase-image-wrapper img {
