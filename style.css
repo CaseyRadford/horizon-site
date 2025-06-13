@@ -571,7 +571,7 @@ footer {
 }
 
 .showcase-item:nth-child(2) .showcase-image-wrapper img {
-  object-position: 50% 30% !important; /* top center */
+  object-position: 50% 40% !important; /* Moves the image down, text stays in place */
 }
 
 .showcase-item:nth-child(3) .showcase-image-wrapper img {
