@@ -657,14 +657,12 @@ footer {
 .showcase-item:nth-child(2) .showcase-overlay {
   justify-content: flex-end;
   padding-bottom: 80px;
-  transform: translateY(-20px);
 }
 
 .showcase-item:nth-child(2) .showcase-category {
   font-size: 0.8rem;
   padding: 4px 10px;
   margin-bottom: 10px;
-  transform: translateY(20px);
 }
 
 .showcase-item:nth-child(2) .showcase-overlay h3 {
