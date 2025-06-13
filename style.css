@@ -596,7 +596,7 @@ footer {
   flex-direction: column;
   justify-content: flex-end;
   transition: background 0.4s ease;
-  padding-bottom: 60px;
+  padding-bottom: 160px;
 }
 
 .showcase-item:hover .showcase-overlay {
