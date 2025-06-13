@@ -656,7 +656,7 @@ footer {
 /* Specific styles for the second showcase item */
 .showcase-item:nth-child(2) .showcase-overlay {
   justify-content: flex-end;
-  padding-bottom: 80px;
+  padding-bottom: 10px;
 }
 
 .showcase-item:nth-child(2) .showcase-category {
