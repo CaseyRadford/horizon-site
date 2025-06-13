@@ -571,7 +571,7 @@ footer {
 }
 
 .showcase-item:nth-child(2) .showcase-image-wrapper img {
-  object-position: 50% 0% !important; /* top center */
+  object-position: 50% 30% !important; /* top center */
 }
 
 .showcase-item:nth-child(3) .showcase-image-wrapper img {
@@ -656,7 +656,7 @@ footer {
 /* Specific styles for the second showcase item */
 .showcase-item:nth-child(2) .showcase-overlay {
   justify-content: flex-end;
-  padding-bottom: 10px;
+  padding-bottom: 80px;
 }
 
 .showcase-item:nth-child(2) .showcase-category {
